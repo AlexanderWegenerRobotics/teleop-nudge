@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "teleop-nudge"
+version = "0.1.0"
+description = "Information-level nudge engine for the teleop system: builds a per-tick state, runs nudge plugins, decides, and sends cue commands to the VR interface."
+requires-python = ">=3.10"
+dependencies = ["numpy", "pyyaml", "msgpack"]
+
+[tool.setuptools.packages.find]
+include = ["teleop_nudge*"]

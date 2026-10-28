@@ -1,0 +1,44 @@
+# Thresholds from scripts/wrench_thresholds.py on the 57 FMB desk episodes (2026-10-13):
+# a held peg reads a steady ~3 N, approach p95 ~3 N, contact-phase p90 ~35 N, GMO transients up to ~30 N in fast moves.
+state:
+  state_source: remote        # remote | twin | local_sim; kinematic signals only, wrench and grasp always from the plant
+
+nudges:
+  contact_onset:
+    enabled: true
+    on_n: 5.0                 # jump of |F_ext| above the tracked resting level (~3.5 false fires per episode in free phases)
+    off_n: 2.5
+    hard_n: 20.0              # strength 1.0 at this jump
+    baseline_tau_s: 1.0       # resting-level tracker, frozen while in contact
+    refractory_s: 0.15
+    max_age_s: 0.3
+  excessive_wrench:
+    enabled: true
+    warn_n: 30.0              # above normal insertion forces (contact p90 ~34 N would buzz on most insertions; revisit)
+    release_n: 22.0
+    limit_n: 60.0             # sim/hardware reflex limit, strength 1.0 here
+    max_age_s: 0.3
+
+decision:
+  policy: scored
+  max_target_entropy: 1.0
+  budget_cues_per_s: 2.0
+  min_on_s: 0.3
+  incumbent_bonus: 0.2
+  takeover_min_score: 0.5
+  min_score: 0.1
+  novelty_tau_s: 2.0
+  active_arm_only: true
+  weights: {}
+
+channels:
+  contact_onset:
+    - {channel: haptic_left, primitive: pulse, duration_s: 0.03}
+    - {channel: audio, primitive: click}
+  excessive_wrench:
+    - {channel: haptic_left, primitive: buzz, duration_s: 0.1}
+
+output:
+  enabled: true
+  host: 127.0.0.1
+  port: 7500

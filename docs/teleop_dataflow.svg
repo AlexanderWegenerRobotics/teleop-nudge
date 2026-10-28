@@ -1,0 +1,212 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1670 1105" width="1670" height="1105" font-family="Helvetica, Arial, sans-serif">
+<defs>
+<marker id="m-cmd" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#d79b00"/></marker>
+<marker id="s-cmd" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10 0 L0 5 L10 10 z" fill="#d79b00"/></marker>
+<marker id="m-state" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#6c8ebf"/></marker>
+<marker id="s-state" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10 0 L0 5 L10 10 z" fill="#6c8ebf"/></marker>
+<marker id="m-video" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#9673a6"/></marker>
+<marker id="s-video" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10 0 L0 5 L10 10 z" fill="#9673a6"/></marker>
+<marker id="m-pose" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#82b366"/></marker>
+<marker id="s-pose" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10 0 L0 5 L10 10 z" fill="#82b366"/></marker>
+<marker id="m-gaze" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#0e8088"/></marker>
+<marker id="s-gaze" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10 0 L0 5 L10 10 z" fill="#0e8088"/></marker>
+<marker id="m-cue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#b85450"/></marker>
+<marker id="s-cue" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10 0 L0 5 L10 10 z" fill="#b85450"/></marker>
+<marker id="m-log" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#666666"/></marker>
+<marker id="s-log" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10 0 L0 5 L10 10 z" fill="#666666"/></marker>
+<marker id="m-int" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#333333"/></marker>
+<marker id="s-int" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10 0 L0 5 L10 10 z" fill="#333333"/></marker>
+</defs>
+<rect width="1670" height="1105" fill="#ffffff"/>
+<text x="20" y="36" font-size="20" text-anchor="start" font-weight="bold" fill="#000" >Teleoperation data flow with local intent and nudge engine</text>
+<text x="20" y="58" font-size="12" text-anchor="start" font-weight="normal" fill="#444" >Target architecture, 2026-10-09. Solid = exists today, dashed = to build. Ages are relative to operator time t (now).</text>
+<rect x="980" y="90" width="100" height="790" fill="#f0f0f0" stroke="#bbb" stroke-dasharray="4 4"/>
+<text x="1030" y="870" font-size="11" text-anchor="middle" font-weight="bold" fill="#555" >Network (ZeroTier)</text>
+<text x="1030" y="108" font-size="11" text-anchor="middle" font-weight="bold" fill="#555" >d<tspan dy="3" font-size="0.75em">n</tspan><tspan dy="-3">​</tspan> ≈ 100 ms</text>
+<text x="1030" y="122" font-size="10" text-anchor="middle" font-weight="normal" fill="#555" >each way</text>
+<rect x="20" y="130" width="140" height="200" rx="8" fill="#fff2cc" stroke="#d6b656" stroke-width="1.5"/>
+<text x="90.0" y="211.5" font-size="13" text-anchor="middle" font-weight="bold" fill="#000" >Operator</text>
+<text x="90.0" y="227.5" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >hands</text>
+<text x="90.0" y="242.5" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >eyes</text>
+<text x="90.0" y="257.5" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >ears</text>
+<rect x="280" y="90" width="670" height="790" rx="4" fill="#fafafa" stroke="#999" stroke-width="1.2"/>
+<rect x="280" y="90" width="670" height="28" rx="4" fill="#e8e8e8" stroke="#999" stroke-width="1.2"/>
+<text x="290" y="109" font-size="13" text-anchor="start" font-weight="bold" fill="#000" >Operator PC</text>
+<text x="940" y="109" font-size="11" text-anchor="end" font-weight="normal" fill="#555" >Boston</text>
+<rect x="1110" y="90" width="540" height="790" rx="4" fill="#fafafa" stroke="#999" stroke-width="1.2"/>
+<rect x="1110" y="90" width="540" height="28" rx="4" fill="#e8e8e8" stroke="#999" stroke-width="1.2"/>
+<text x="1120" y="109" font-size="13" text-anchor="start" font-weight="bold" fill="#000" >Avatar side</text>
+<text x="1640" y="109" font-size="11" text-anchor="end" font-weight="normal" fill="#555" >Abu Dhabi</text>
+<rect x="300" y="130" width="630" height="200" rx="8" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.5"/>
+<text x="615.0" y="204.0" font-size="13" text-anchor="middle" font-weight="bold" fill="#000" >VR interface (UE5)</text>
+<text x="615.0" y="220.0" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >produces: arm and head commands (120 Hz), gaze samples (tagged with video frame id)</text>
+<text x="615.0" y="235.0" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >shows: video, command ghost, HUD</text>
+<text x="615.0" y="250.0" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >holds: cue primitives (haptic pulse, sound, overlay). No thresholds, no decisions</text>
+<text x="615.0" y="265.0" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >logs: commands, stream metrics, operator view</text>
+<rect x="770" y="400" width="160" height="120" rx="8" fill="#d5e8d4" stroke="#82b366" stroke-width="1.5"/>
+<text x="850.0" y="441.5" font-size="13" text-anchor="middle" font-weight="bold" fill="#000" >Twin</text>
+<text x="850.0" y="457.5" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >simulated robot + scene</text>
+<text x="850.0" y="472.5" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >same control code</text>
+<text x="850.0" y="487.5" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >reconciler corrects drift</text>
+<rect x="300" y="560" width="630" height="290" rx="8" fill="#ffffff" stroke="#666" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="312" y="840" font-size="12" text-anchor="start" font-weight="bold" fill="#000" >Local orchestrator (second instance, new)</text>
+<rect x="320" y="610" width="180" height="190" rx="8" fill="#f8cecc" stroke="#b85450" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="410.0" y="664.0" font-size="13" text-anchor="middle" font-weight="bold" fill="#000" >Nudge engine</text>
+<text x="410.0" y="680.0" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >detectors</text>
+<text x="410.0" y="695.0" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >phase + entropy gate</text>
+<text x="410.0" y="710.0" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >arbitration</text>
+<text x="410.0" y="725.0" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" ></text>
+<text x="410.0" y="740.0" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >produces: cue commands,</text>
+<text x="410.0" y="755.0" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >nudge events</text>
+<rect x="530" y="610" width="170" height="130" rx="8" fill="#e1d5e7" stroke="#9673a6" stroke-width="1.5"/>
+<text x="615.0" y="649.0" font-size="13" text-anchor="middle" font-weight="bold" fill="#000" >Intent module</text>
+<text x="615.0" y="665.0" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >HMM / GRU / Transformer</text>
+<text x="615.0" y="680.0" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" ></text>
+<text x="615.0" y="695.0" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >produces: phase, target,</text>
+<text x="615.0" y="710.0" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >entropy</text>
+<rect x="720" y="610" width="190" height="190" rx="8" fill="#fff2cc" stroke="#d6b656" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="815.0" y="671.5" font-size="13" text-anchor="middle" font-weight="bold" fill="#000" >Robot state source</text>
+<text x="815.0" y="687.5" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >config: twin | avatar</text>
+<text x="815.0" y="702.5" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" ></text>
+<text x="815.0" y="717.5" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >kinematic state: switchable</text>
+<text x="815.0" y="732.5" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >wrench, grasp state:</text>
+<text x="815.0" y="747.5" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >always avatar</text>
+<path d="M 720 675 L 700 675" fill="none" stroke="#333333" stroke-width="2" marker-end="url(#m-int)"/>
+<path d="M 530 675 L 500 675" fill="none" stroke="#333333" stroke-width="2" marker-end="url(#m-int)"/>
+<path d="M 720 772 L 500 772" fill="none" stroke="#333333" stroke-width="2" marker-end="url(#m-int)"/>
+<text x="610" y="764" font-size="10" text-anchor="middle" font-weight="normal" fill="#333" >state, wrench, poses</text>
+<rect x="1130" y="130" width="240" height="50" rx="8" fill="#e1d5e7" stroke="#9673a6" stroke-width="1.5"/>
+<text x="1250.0" y="151.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#000" >Cameras + H.264 streamer</text>
+<text x="1250.0" y="167.5" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >embeds frame id + timestamp</text>
+<rect x="1130" y="195" width="240" height="250" rx="8" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.5"/>
+<text x="1250.0" y="264.0" font-size="13" text-anchor="middle" font-weight="bold" fill="#000" >Avatar</text>
+<text x="1250.0" y="280.0" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >teleop-simulator / libfranka</text>
+<text x="1250.0" y="295.0" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" ></text>
+<text x="1250.0" y="310.0" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >arm control 1 kHz</text>
+<text x="1250.0" y="325.0" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >momentum observer (wrench)</text>
+<text x="1250.0" y="340.0" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >state out 200 Hz</text>
+<text x="1250.0" y="355.0" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" ></text>
+<text x="1250.0" y="370.0" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >holds: robot state, wrench,</text>
+<text x="1250.0" y="385.0" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >grasp state</text>
+<rect x="1130" y="465" width="240" height="60" rx="8" fill="#d5e8d4" stroke="#82b366" stroke-width="1.5"/>
+<text x="1250.0" y="491.5" font-size="13" text-anchor="middle" font-weight="bold" fill="#000" >Perception</text>
+<text x="1250.0" y="507.5" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >ArUco tags, calibrated cameras</text>
+<rect x="1130" y="560" width="240" height="80" rx="8" fill="#f5f5f5" stroke="#999" stroke-width="1.5"/>
+<text x="1250.0" y="596.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#555" >Orchestrator (ACT policy)</text>
+<text x="1250.0" y="612.5" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >unchanged, not in the nudge path</text>
+<rect x="1130" y="790" width="240" height="70" rx="8" fill="#f5f5f5" stroke="#666" stroke-width="1.5"/>
+<text x="1250.0" y="814.0" font-size="13" text-anchor="middle" font-weight="bold" fill="#000" >Episode log</text>
+<text x="1250.0" y="830.0" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >arms, scene, video, gaze,</text>
+<text x="1250.0" y="845.0" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >+ intent output, nudge events</text>
+<rect x="1410" y="195" width="220" height="250" rx="8" fill="#fff2cc" stroke="#d6b656" stroke-width="1.5"/>
+<text x="1520.0" y="309.0" font-size="13" text-anchor="middle" font-weight="bold" fill="#000" >Robot + scene</text>
+<text x="1520.0" y="325.0" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >Franka arm(s)</text>
+<text x="1520.0" y="340.0" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#333" >FMB board and pegs</text>
+<path d="M 1370 290 L 1410 290" fill="none" stroke="#d79b00" stroke-width="2" marker-end="url(#m-cmd)"/>
+<text x="1390" y="282" font-size="11" text-anchor="middle" font-weight="bold" fill="#d79b00" >τ</text>
+<path d="M 1410 350 L 1370 350" fill="none" stroke="#6c8ebf" stroke-width="2" marker-end="url(#m-state)"/>
+<text x="1390" y="342" font-size="11" text-anchor="middle" font-weight="bold" fill="#6c8ebf" >q</text>
+<path d="M 1520 195 L 1520 155 L 1370 155" fill="none" stroke="#9673a6" stroke-width="2" marker-end="url(#m-video)"/>
+<text x="1445" y="148" font-size="10.5" text-anchor="middle" font-weight="bold" fill="#9673a6" >images</text>
+<path d="M 1520 445 L 1520 495 L 1370 495" fill="none" stroke="#9673a6" stroke-width="2" marker-end="url(#m-video)"/>
+<text x="1445" y="488" font-size="10.5" text-anchor="middle" font-weight="bold" fill="#9673a6" >images</text>
+<path d="M 160 165 L 300 165" fill="none" stroke="#d79b00" stroke-width="2" marker-end="url(#m-cmd)"/>
+<text x="230.0" y="159" font-size="10.5" text-anchor="middle" font-weight="bold" fill="#d79b00" >controller pose</text>
+<text x="230.0" y="179" font-size="10" text-anchor="middle" font-weight="normal" fill="#444" font-style="italic">age 0</text>
+<path d="M 160 210 L 300 210" fill="none" stroke="#0e8088" stroke-width="2" marker-end="url(#m-gaze)"/>
+<text x="230.0" y="204" font-size="10.5" text-anchor="middle" font-weight="bold" fill="#0e8088" >gaze direction</text>
+<text x="230.0" y="224" font-size="10" text-anchor="middle" font-weight="normal" fill="#444" font-style="italic">age 0</text>
+<path d="M 300 258 L 160 258" fill="none" stroke="#9673a6" stroke-width="2" marker-end="url(#m-video)"/>
+<text x="230.0" y="252" font-size="10.5" text-anchor="middle" font-weight="bold" fill="#9673a6" >video + ghost</text>
+<text x="230.0" y="272" font-size="10" text-anchor="middle" font-weight="normal" fill="#444" font-style="italic">scene age d<tspan dy="3" font-size="0.75em">v</tspan><tspan dy="-3">​</tspan></text>
+<path d="M 300 305 L 160 305" fill="none" stroke="#b85450" stroke-width="2" stroke-dasharray="7 4" marker-end="url(#m-cue)"/>
+<text x="230.0" y="299" font-size="10.5" text-anchor="middle" font-weight="bold" fill="#b85450" >haptic, audio, visual</text>
+<text x="230.0" y="319" font-size="10" text-anchor="middle" font-weight="normal" fill="#444" font-style="italic">rendered at t + d<tspan dy="3" font-size="0.75em">c</tspan><tspan dy="-3">​</tspan></text>
+<path d="M 1130 155 L 930 155" fill="none" stroke="#9673a6" stroke-width="2" marker-end="url(#m-video)"/>
+<text x="1030.0" y="149" font-size="10.5" text-anchor="middle" font-weight="bold" fill="#9673a6" >video, 30 fps</text>
+<text x="1030.0" y="169" font-size="10" text-anchor="middle" font-weight="normal" fill="#444" font-style="italic">age d<tspan dy="3" font-size="0.75em">v</tspan><tspan dy="-3">​</tspan> on screen</text>
+<path d="M 930 215 L 1130 215" fill="none" stroke="#d79b00" stroke-width="2" marker-end="url(#m-cmd)"/>
+<text x="1030.0" y="209" font-size="10.5" text-anchor="middle" font-weight="bold" fill="#d79b00" >arm + head commands, 120 Hz</text>
+<text x="1030.0" y="229" font-size="10" text-anchor="middle" font-weight="normal" fill="#444" font-style="italic">applied at t + d<tspan dy="3" font-size="0.75em">n</tspan><tspan dy="-3">​</tspan></text>
+<path d="M 1130 265 L 930 265" fill="none" stroke="#6c8ebf" stroke-width="2" marker-end="url(#m-state)"/>
+<text x="1030.0" y="259" font-size="10.5" text-anchor="middle" font-weight="bold" fill="#6c8ebf" >arm state 200 Hz (+ wrench: new)</text>
+<text x="1030.0" y="279" font-size="10" text-anchor="middle" font-weight="normal" fill="#444" font-style="italic">age d<tspan dy="3" font-size="0.75em">n</tspan><tspan dy="-3">​</tspan></text>
+<path d="M 930 312 L 1130 312" fill="none" stroke="#0e8088" stroke-width="2" marker-end="url(#m-gaze)"/>
+<text x="1030.0" y="306" font-size="10.5" text-anchor="middle" font-weight="bold" fill="#0e8088" >gaze samples (for the log)</text>
+<text x="1030.0" y="326" font-size="10" text-anchor="middle" font-weight="normal" fill="#444" font-style="italic">arrive at t + d<tspan dy="3" font-size="0.75em">n</tspan><tspan dy="-3">​</tspan></text>
+<path d="M 1130 425 L 930 425" fill="none" stroke="#6c8ebf" stroke-width="2" marker-end="url(#m-state)"/>
+<text x="1030.0" y="419" font-size="10.5" text-anchor="middle" font-weight="bold" fill="#6c8ebf" >joint telemetry 100 Hz</text>
+<text x="1030.0" y="439" font-size="10" text-anchor="middle" font-weight="normal" fill="#444" font-style="italic">age d<tspan dy="3" font-size="0.75em">n</tspan><tspan dy="-3">​</tspan></text>
+<path d="M 1130 495 L 930 495" fill="none" stroke="#82b366" stroke-width="2" stroke-dasharray="7 4" marker-end="url(#m-pose)"/>
+<text x="1030.0" y="489" font-size="10.5" text-anchor="middle" font-weight="bold" fill="#82b366" >object poses</text>
+<text x="1030.0" y="509" font-size="10" text-anchor="middle" font-weight="normal" fill="#444" font-style="italic">age d<tspan dy="3" font-size="0.75em">n</tspan><tspan dy="-3">​</tspan> + d<tspan dy="3" font-size="0.75em">p</tspan><tspan dy="-3">​</tspan></text>
+<circle cx="955" cy="495" r="3.5" fill="#82b366"/>
+<path d="M 955 495 L 955 590 L 930 590" fill="none" stroke="#82b366" stroke-width="2" stroke-dasharray="7 4" marker-end="url(#m-pose)"/>
+<path d="M 930 825 L 1130 825" fill="none" stroke="#666666" stroke-width="2" stroke-dasharray="7 4" marker-end="url(#m-log)"/>
+<text x="1030.0" y="819" font-size="10.5" text-anchor="middle" font-weight="bold" fill="#666666" >intent output, nudge events</text>
+<text x="1030.0" y="839" font-size="10" text-anchor="middle" font-weight="normal" fill="#444" font-style="italic">arrive at t + d<tspan dy="3" font-size="0.75em">n</tspan><tspan dy="-3">​</tspan></text>
+<path d="M 410 610 L 410 330" fill="none" stroke="#b85450" stroke-width="2" stroke-dasharray="7 4" marker-end="url(#m-cue)"/>
+<text x="417" y="440" font-size="10.5" text-anchor="start" font-weight="bold" fill="#b85450" >cue commands</text>
+<text x="417" y="453" font-size="10" text-anchor="start" font-weight="normal" fill="#444" font-style="italic">id, primitive, target, intensity</text>
+<path d="M 615 330 L 615 610" fill="none" stroke="#0e8088" stroke-width="2" stroke-dasharray="7 4" marker-end="url(#m-gaze)"/>
+<text x="609" y="385" font-size="10.5" text-anchor="end" font-weight="bold" fill="#0e8088" >gaze, commands</text>
+<text x="609" y="398" font-size="10" text-anchor="end" font-weight="normal" fill="#444" font-style="italic">age 0</text>
+<path d="M 745 330 L 745 610" fill="none" stroke="#6c8ebf" stroke-width="2" stroke-dasharray="7 4" marker-end="url(#m-state)"/>
+<text x="739" y="480" font-size="10.5" text-anchor="end" font-weight="bold" fill="#6c8ebf" >avatar state + wrench</text>
+<text x="739" y="493" font-size="10" text-anchor="end" font-weight="normal" fill="#444" font-style="italic">relayed, age d<tspan dy="3" font-size="0.75em">n</tspan><tspan dy="-3">​</tspan></text>
+<path d="M 850 330 L 850 400" fill="none" stroke="#d79b00" stroke-width="2" marker-end="url(#m-cmd)"/>
+<text x="844" y="362" font-size="10.5" text-anchor="end" font-weight="bold" fill="#d79b00" >commands (copy)</text>
+<text x="844" y="375" font-size="10" text-anchor="end" font-weight="normal" fill="#444" font-style="italic">age 0</text>
+<path d="M 850 520 L 850 610" fill="none" stroke="#6c8ebf" stroke-width="2" stroke-dasharray="7 4" marker-end="url(#m-state)"/>
+<text x="857" y="536" font-size="10.5" text-anchor="start" font-weight="bold" fill="#6c8ebf" >twin state</text>
+<text x="857" y="549" font-size="10" text-anchor="start" font-weight="normal" fill="#444" font-style="italic">age ≈ 0</text>
+<rect x="20" y="905" width="1630" height="180" rx="4" fill="#ffffff" stroke="#999"/>
+<text x="36" y="930" font-size="13" text-anchor="start" font-weight="bold" fill="#000" >Time nomenclature</text>
+<text x="36" y="954" font-size="11.5" text-anchor="start" font-weight="bold" fill="#000" >t</text>
+<text x="160" y="954" font-size="11.5" text-anchor="start" font-weight="normal" fill="#333" >now, on the operator clock</text>
+<text x="36" y="973" font-size="11.5" text-anchor="start" font-weight="bold" fill="#000" >d<tspan dy="3" font-size="0.75em">n</tspan><tspan dy="-3">​</tspan> ≈ 100 ms</text>
+<text x="160" y="973" font-size="11.5" text-anchor="start" font-weight="normal" fill="#333" >one-way network delay (measured round trip ≈ 200 ms)</text>
+<text x="36" y="992" font-size="11.5" text-anchor="start" font-weight="bold" fill="#000" >d<tspan dy="3" font-size="0.75em">v</tspan><tspan dy="-3">​</tspan> ≈ 200–250 ms</text>
+<text x="160" y="992" font-size="11.5" text-anchor="start" font-weight="normal" fill="#333" >camera to eye, includes d<tspan dy="3" font-size="0.75em">n</tspan><tspan dy="-3">​</tspan> (encode, buffer, decode, display)</text>
+<text x="36" y="1011" font-size="11.5" text-anchor="start" font-weight="bold" fill="#000" >d<tspan dy="3" font-size="0.75em">a</tspan><tspan dy="-3">​</tspan> ≈ 20–75 ms</text>
+<text x="160" y="1011" font-size="11.5" text-anchor="start" font-weight="normal" fill="#333" >arm tracking lag, reference to measured</text>
+<text x="36" y="1030" font-size="11.5" text-anchor="start" font-weight="bold" fill="#000" >d<tspan dy="3" font-size="0.75em">p</tspan><tspan dy="-3">​</tspan></text>
+<text x="160" y="1030" font-size="11.5" text-anchor="start" font-weight="normal" fill="#333" >perception processing time, not measured yet</text>
+<text x="36" y="1049" font-size="11.5" text-anchor="start" font-weight="bold" fill="#000" >d<tspan dy="3" font-size="0.75em">c</tspan><tspan dy="-3">​</tspan></text>
+<text x="160" y="1049" font-size="11.5" text-anchor="start" font-weight="normal" fill="#333" >cue render time (haptic a few ms, audio buffer more)</text>
+<text x="36" y="1074" font-size="10" text-anchor="start" font-weight="normal" fill="#666" font-style="italic">Values are approximate, from the September hardware logs.</text>
+<text x="620" y="930" font-size="13" text-anchor="start" font-weight="bold" fill="#000" >What the nudge engine knows at time t</text>
+<text x="620" y="954" font-size="11.5" text-anchor="start" font-weight="bold" fill="#000" >own command, gaze</text>
+<text x="790" y="954" font-size="11.5" text-anchor="start" font-weight="normal" fill="#333" >t</text>
+<text x="620" y="973" font-size="11.5" text-anchor="start" font-weight="bold" fill="#000" >twin state</text>
+<text x="790" y="973" font-size="11.5" text-anchor="start" font-weight="normal" fill="#333" >t (simulated arm, no network)</text>
+<text x="620" y="992" font-size="11.5" text-anchor="start" font-weight="bold" fill="#000" >avatar state, wrench</text>
+<text x="790" y="992" font-size="11.5" text-anchor="start" font-weight="normal" fill="#333" >t − d<tspan dy="3" font-size="0.75em">n</tspan><tspan dy="-3">​</tspan>, reflecting commands sent at t − 2·d<tspan dy="3" font-size="0.75em">n</tspan><tspan dy="-3">​</tspan> − d<tspan dy="3" font-size="0.75em">a</tspan><tspan dy="-3">​</tspan></text>
+<text x="620" y="1011" font-size="11.5" text-anchor="start" font-weight="bold" fill="#000" >object poses</text>
+<text x="790" y="1011" font-size="11.5" text-anchor="start" font-weight="normal" fill="#333" >t − d<tspan dy="3" font-size="0.75em">n</tspan><tspan dy="-3">​</tspan> − d<tspan dy="3" font-size="0.75em">p</tspan><tspan dy="-3">​</tspan></text>
+<text x="620" y="1030" font-size="11.5" text-anchor="start" font-weight="bold" fill="#000" >video frame on screen</text>
+<text x="790" y="1030" font-size="11.5" text-anchor="start" font-weight="normal" fill="#333" >t − d<tspan dy="3" font-size="0.75em">v</tspan><tspan dy="-3">​</tspan> (gaze is matched to it by frame id)</text>
+<text x="620" y="1049" font-size="11.5" text-anchor="start" font-weight="bold" fill="#000" >own motion seen in video</text>
+<text x="790" y="1049" font-size="11.5" text-anchor="start" font-weight="normal" fill="#333" >after d<tspan dy="3" font-size="0.75em">n</tspan><tspan dy="-3">​</tspan> + d<tspan dy="3" font-size="0.75em">a</tspan><tspan dy="-3">​</tspan> + d<tspan dy="3" font-size="0.75em">v</tspan><tspan dy="-3">​</tspan> ≈ 350–450 ms</text>
+<text x="1240" y="930" font-size="13" text-anchor="start" font-weight="bold" fill="#000" >Legend</text>
+<line x1="1240" y1="950" x2="1274" y2="950" stroke="#d79b00" stroke-width="2" marker-end="url(#m-cmd)"/>
+<text x="1284" y="954" font-size="11.5" text-anchor="start" font-weight="normal" fill="#000" >commands</text>
+<line x1="1440" y1="950" x2="1474" y2="950" stroke="#6c8ebf" stroke-width="2" marker-end="url(#m-state)"/>
+<text x="1484" y="954" font-size="11.5" text-anchor="start" font-weight="normal" fill="#000" >robot state, wrench</text>
+<line x1="1240" y1="969" x2="1274" y2="969" stroke="#9673a6" stroke-width="2" marker-end="url(#m-video)"/>
+<text x="1284" y="973" font-size="11.5" text-anchor="start" font-weight="normal" fill="#000" >video, images</text>
+<line x1="1440" y1="969" x2="1474" y2="969" stroke="#82b366" stroke-width="2" marker-end="url(#m-pose)"/>
+<text x="1484" y="973" font-size="11.5" text-anchor="start" font-weight="normal" fill="#000" >object poses</text>
+<line x1="1240" y1="988" x2="1274" y2="988" stroke="#0e8088" stroke-width="2" marker-end="url(#m-gaze)"/>
+<text x="1284" y="992" font-size="11.5" text-anchor="start" font-weight="normal" fill="#000" >gaze</text>
+<line x1="1440" y1="988" x2="1474" y2="988" stroke="#b85450" stroke-width="2" marker-end="url(#m-cue)"/>
+<text x="1484" y="992" font-size="11.5" text-anchor="start" font-weight="normal" fill="#000" >cues</text>
+<line x1="1240" y1="1007" x2="1274" y2="1007" stroke="#666666" stroke-width="2" marker-end="url(#m-log)"/>
+<text x="1284" y="1011" font-size="11.5" text-anchor="start" font-weight="normal" fill="#000" >log uplink</text>
+<line x1="1440" y1="1007" x2="1474" y2="1007" stroke="#333333" stroke-width="2" marker-end="url(#m-int)"/>
+<text x="1484" y="1011" font-size="11.5" text-anchor="start" font-weight="normal" fill="#000" >inside orchestrator</text>
+<line x1="1240" y1="1040" x2="1274" y2="1040" stroke="#333" stroke-width="2"/>
+<text x="1284" y="1044" font-size="11.5" text-anchor="start" font-weight="normal" fill="#000" >exists today</text>
+<line x1="1440" y1="1040" x2="1474" y2="1040" stroke="#333" stroke-width="2" stroke-dasharray="7 4"/>
+<text x="1484" y="1044" font-size="11.5" text-anchor="start" font-weight="normal" fill="#000" >to build</text>
+</svg>
