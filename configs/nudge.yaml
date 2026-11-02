@@ -18,6 +18,18 @@ nudges:
     release_n: 22.0
     limit_n: 60.0             # sim/hardware reflex limit, strength 1.0 here
     max_age_s: 0.3
+  grasp_ruler:
+    enabled: true
+    geometry: tasks/fmb_board_1.yaml   # scripts/build_task_geometry.py
+    tcp_offset_m: [0.0, 0.0, 0.103]    # flange to pad centre (sim reports the flange); remote: depends on the F_T_EE set on the robot
+    min_prob: 0.6
+    hz: 20
+    tol_xy_m: 0.008
+    tol_z_m: 0.008
+    tol_yaw_deg: 12.0
+    near_m: 0.04
+    goal_policy: any                   # any | all free goals of the part type must allow the grasp
+    max_age_s: 0.3
 
 decision:
   policy: scored
@@ -37,6 +49,8 @@ channels:
     - {channel: audio, primitive: click}
   excessive_wrench:
     - {channel: haptic_left, primitive: buzz, duration_s: 0.1}
+  grasp_ruler:
+    - {channel: visual, primitive: grasp_ruler}
 
 output:
   enabled: true

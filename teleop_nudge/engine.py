@@ -66,7 +66,9 @@ class NudgeEngine:
 def build_engine(cfg: dict | str | Path, log_path: str | None = None, send: bool = True) -> NudgeEngine:
     """Constructs an engine from a config dict or yaml path."""
     if not isinstance(cfg, dict):
-        cfg = yaml.safe_load(Path(cfg).read_text())
+        path = Path(cfg)
+        cfg = yaml.safe_load(path.read_text())
+        cfg.setdefault("_config_dir", str(path.parent))
     state = StateBuilder(cfg.get("state", {}))
     nudges = []
     for name, ncfg in cfg.get("nudges", {}).items():
@@ -74,7 +76,7 @@ def build_engine(cfg: dict | str | Path, log_path: str | None = None, send: bool
             continue
         if name not in REGISTRY:
             raise KeyError(f"unknown nudge {name!r}; registered: {sorted(REGISTRY)}")
-        nudges.append(REGISTRY[name](ncfg))
+        nudges.append(REGISTRY[name]({**ncfg, "_config_dir": cfg.get("_config_dir", ".")}))
     dcfg = cfg.get("decision", {})
     policy = POLICIES[dcfg.get("policy", "scored")](dcfg, ChannelMap(cfg.get("channels", {})))
     out = cfg.get("output", {})

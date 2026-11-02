@@ -51,6 +51,9 @@ class ArmContext:
     target: int = -1
     target_entropy: float = float("inf")
     active: bool = False
+    target_name: str = ""
+    target_kind: str = ""
+    target_prob: float = 0.0
 
 
 @dataclass

@@ -52,11 +52,13 @@ class StateBuilder:
                 if val is not None:
                     self.push(f"{key}_{arm}", val if key == "grasp" else np.asarray(val, dtype=float), t_sample_ns, source)
 
-    def push_intent(self, arm: str, phase: int, phase_posterior, target: int, target_entropy: float) -> None:
-        """Intent module output for one arm."""
+    def push_intent(self, arm: str, phase: int, phase_posterior, target: int, target_entropy: float,
+                    target_name: str = "", target_kind: str = "", target_prob: float = 0.0) -> None:
+        """Intent module output for one arm; name and kind ("object" | "goal") of the top target when known."""
         ctx = self._arms[arm]
         ctx.phase, ctx.target, ctx.target_entropy = int(phase), int(target), float(target_entropy)
         ctx.phase_posterior = None if phase_posterior is None else np.asarray(phase_posterior, dtype=float)
+        ctx.target_name, ctx.target_kind, ctx.target_prob = str(target_name), str(target_kind), float(target_prob)
 
     def set_active(self, arm: str, active: bool) -> None:
         """Marks the arm the operator is currently driving (unclutched)."""

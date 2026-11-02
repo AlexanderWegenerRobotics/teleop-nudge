@@ -61,7 +61,7 @@ class ScoredArbitration(DecisionPolicy):
     def decide(self, proposals: list[Proposal], snap: Snapshot) -> Decision:
         d = Decision()
         for p in sorted(proposals, key=lambda p: (p.tier != Tier.REFLEXIVE, -p.urgency)):
-            if p.tier == Tier.REFLEXIVE:
+            if p.tier in (Tier.REFLEXIVE, Tier.DISPLAY):
                 self._issue(p, snap, d)
                 continue
             reason = self._gate(p, snap)
@@ -120,8 +120,9 @@ class ScoredArbitration(DecisionPolicy):
     def _issue(self, p: Proposal, snap: Snapshot, d: Decision) -> None:
         for c in self.channels.commands(p, snap.t_ns):
             d.issued.append(c)
-            self.holder[c.channel] = (p.nudge, snap.t_ns)
-        if p.tier != Tier.REFLEXIVE:
+            if p.tier != Tier.DISPLAY:
+                self.holder[c.channel] = (p.nudge, snap.t_ns)
+        if p.tier == Tier.ADVISORY:
             self.issue_times.append(snap.t_ns)
         self.last_seen[p.nudge] = snap.t_ns
 
